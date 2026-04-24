@@ -1,0 +1,8 @@
+SELECT 
+    payment_type,
+    ROUND(SUM(payment_value)::NUMERIC, 2) AS total_revenue,
+    ROUND(AVG(payment_value)::NUMERIC, 2) AS avg_order_value,
+    COUNT(*) AS num_transactions
+FROM order_payments
+GROUP BY payment_type
+ORDER BY total_revenue DESC;
