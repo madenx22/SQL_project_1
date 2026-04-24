@@ -1,0 +1,43 @@
+"What's the average delivery delay?"
+
+# What are the average waiting times and the difference between expected times
+SELECT 
+  AVG(order_delivered_carrier_date - order_approved_at) AS avg_processing_time,
+  AVG(order_delivered_customer_date - order_purchase_timestamp) AS avg_wait_time,
+  AVG(order_estimated_delivery_date - order_purchase_timestamp) AS avg_expected_wait,
+  AVG(order_delivered_customer_date - order_estimated_delivery_date) AS avg_delivery_delay
+FROM orders;
+
+# How many are on time, late, never delivered
+SELECT 
+	CASE
+		WHEN order_delivered_customer_date <= order_estimated_delivery_date THEN
+			'On Time'
+		WHEN order_delivered_customer_date > order_estimated_delivery_date THEN
+			'Late'
+		ELSE
+			'Never Delivered'
+	END AS delivery_status, 
+	COUNT(*) AS number_orders,
+	ROUND(100.0*COUNT(*)/ SUM(COUNT(*)) OVER(), 2) AS percentage
+FROM orders
+GROUP BY delivery_status
+
+# How late are they by seller to customer location factor
+	SELECT 
+		s.seller_state, 
+		c.customer_state,
+		AVG(o.order_delivered_customer_date - o.order_purchase_timestamp) AS avg_wait_time,
+		AVG(o.order_delivered_customer_date - o.order_estimated_delivery_date) AS avg_delay_time,
+		COUNT(*) AS num_orders,
+		ROUND(100 * SUM(CASE WHEN o.order_delivered_customer_date <= o.order_estimated_delivery_date THEN 1 ELSE 0 END) / COUNT(*), 2) AS percent_on_time,
+		ROUND(100 * SUM(CASE WHEN o.order_delivered_customer_date > o.order_estimated_delivery_date THEN 1 ELSE 0 END) / COUNT(*), 2) AS percent_late
+	FROM orders o
+	JOIN customers c ON c.customer_id = o.customer_id
+	JOIN order_items oi ON o.order_id = oi.order_id
+	JOIN sellers s ON s.seller_id = oi.seller_id
+	WHERE o.order_delivered_customer_date IS NOT NULL
+	GROUP BY s.seller_state, c.customer_state
+	ORDER BY percent_late DESC
+
+*"Discovered anomalous 104-day delivery for CE → AM route. Investigation revealed outlier order. Recommended excluding outlier as only 1 time route."*
