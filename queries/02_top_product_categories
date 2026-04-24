@@ -1,0 +1,8 @@
+SELECT category_name_translation.product_category_name_english, 
+		COUNT(DISTINCT(order_items.order_id)) AS number_of_distinct_orders,
+		COUNT(order_items.order_id) AS total_orders_per_category
+FROM order_items
+JOIN products ON order_items.product_id = products.product_id
+JOIN category_name_translation ON products.product_category_name = category_name_translation.product_category_name
+GROUP BY category_name_translation.product_category_name_english
+ORDER BY total_orders_per_category DESC;
