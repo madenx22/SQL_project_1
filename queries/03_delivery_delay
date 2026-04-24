@@ -40,4 +40,20 @@ GROUP BY delivery_status
 	GROUP BY s.seller_state, c.customer_state
 	ORDER BY percent_late DESC
 
+# Investigate unusual  CE -> AM route of 104 day delivery 
+
+	SELECT 
+		s.seller_state, 
+		c.customer_state,
+		order_estimated_delivery_date,
+		order_delivered_customer_date,
+		order_purchase_timestamp
+	FROM orders o
+	JOIN customers c ON c.customer_id = o.customer_id
+	JOIN order_items oi ON o.order_id = oi.order_id
+	JOIN sellers s ON s.seller_id = oi.seller_id
+	WHERE o.order_delivered_customer_date IS NOT NULL
+	AND seller_state = 'CE' AND customer_state = 'AM'
+
+
 *"Discovered anomalous 104-day delivery for CE → AM route. Investigation revealed outlier order. Recommended excluding outlier as only 1 time route."*
