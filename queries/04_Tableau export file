@@ -1,0 +1,15 @@
+SELECT 
+    s.seller_state,
+    c.customer_state,
+    COUNT(*) AS num_orders,
+    ROUND(AVG(EXTRACT(EPOCH FROM (o.order_delivered_customer_date - o.order_estimated_delivery_date))/86400), 1) AS avg_delay_days
+FROM orders o
+JOIN customers c ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN sellers s ON s.seller_id = oi.seller_id
+WHERE o.order_delivered_customer_date IS NOT NULL
+    AND NOT (s.seller_state = 'CE' AND c.customer_state = 'AM' AND EXTRACT(EPOCH FROM (o.order_delivered_customer_date - o.order_purchase_timestamp))/86400 > 90)
+GROUP BY s.seller_state, c.customer_state
+HAVING COUNT(*) > 5
+ORDER BY avg_delay_days DESC
+LIMIT 15;
