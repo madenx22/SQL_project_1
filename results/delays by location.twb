@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0410.0924                               -->
+<workbook original-version='18.1' source-build='2026.1.1 (20261.26.0410.0924)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='delays' inline='true' name='federated.0upmw0m17so3e3107ri0p0mbg9e4' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='delays' name='textscan.06d3bg21n092kb183lecs1gexnq7'>
+            <connection class='textscan' directory='C:/temp' filename='delays.txt' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.06d3bg21n092kb183lecs1gexnq7' name='delays.txt' table='[delays#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+            <column datatype='string' name='seller_state' ordinal='0' />
+            <column datatype='string' name='customer_state' ordinal='1' />
+            <column datatype='integer' name='num_orders' ordinal='2' />
+            <column datatype='real' name='avg_delay_days' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[delays.txt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_CA&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seller_state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[seller_state]</local-name>
+            <parent-name>[delays.txt]</parent-name>
+            <remote-alias>seller_state</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[delays.txt_21847BB34AC44CD1B3AB442222AD5D6F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>customer_state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[customer_state]</local-name>
+            <parent-name>[delays.txt]</parent-name>
+            <remote-alias>customer_state</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[delays.txt_21847BB34AC44CD1B3AB442222AD5D6F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>num_orders</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[num_orders]</local-name>
+            <parent-name>[delays.txt]</parent-name>
+            <remote-alias>num_orders</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[delays.txt_21847BB34AC44CD1B3AB442222AD5D6F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_delay_days</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_delay_days]</local-name>
+            <parent-name>[delays.txt]</parent-name>
+            <remote-alias>avg_delay_days</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[delays.txt_21847BB34AC44CD1B3AB442222AD5D6F]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='delays.txt' datatype='table' name='[__tableau_internal_object_id__].[delays.txt_21847BB34AC44CD1B3AB442222AD5D6F]' role='measure' type='quantitative' />
+      <column caption='Avg Delay Days' datatype='real' name='[avg_delay_days]' role='measure' type='quantitative' />
+      <column caption='Customer State' datatype='string' name='[customer_state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Num Orders' datatype='integer' name='[num_orders]' role='measure' type='quantitative' />
+      <column caption='Seller State' datatype='string' name='[seller_state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column-instance column='[customer_state]' derivation='None' name='[none:customer_state:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:customer_state:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;AL&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;ES&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;DF&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;PI&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;MT&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;SC&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;CE&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;MA&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BA&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;PE&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='delays.txt' id='delays.txt_21847BB34AC44CD1B3AB442222AD5D6F'>
+            <properties context=''>
+              <relation connection='textscan.06d3bg21n092kb183lecs1gexnq7' name='delays.txt' table='[delays#txt]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+                  <column datatype='string' name='seller_state' ordinal='0' />
+                  <column datatype='string' name='customer_state' ordinal='1' />
+                  <column datatype='integer' name='num_orders' ordinal='2' />
+                  <column datatype='real' name='avg_delay_days' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='delays' name='federated.0upmw0m17so3e3107ri0p0mbg9e4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0upmw0m17so3e3107ri0p0mbg9e4'>
+            <column caption='Avg Delay Days' datatype='real' name='[avg_delay_days]' role='measure' type='quantitative' />
+            <column caption='Customer State' datatype='string' name='[customer_state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[customer_state]' derivation='None' name='[none:customer_state:nk]' pivot='key' type='nominal' />
+            <column-instance column='[seller_state]' derivation='None' name='[none:seller_state:nk]' pivot='key' type='nominal' />
+            <column caption='Seller State' datatype='string' name='[seller_state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[avg_delay_days]' derivation='Sum' name='[sum:avg_delay_days:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0upmw0m17so3e3107ri0p0mbg9e4].[none:seller_state:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0upmw0m17so3e3107ri0p0mbg9e4].[sum:avg_delay_days:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0upmw0m17so3e3107ri0p0mbg9e4].[sum:avg_delay_days:qk]' field-type='quantitative' reverse='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0upmw0m17so3e3107ri0p0mbg9e4].[none:customer_state:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0upmw0m17so3e3107ri0p0mbg9e4].[sum:avg_delay_days:qk]</rows>
+        <cols>[federated.0upmw0m17so3e3107ri0p0mbg9e4].[none:seller_state:nk]</cols>
+      </table>
+      <simple-id uuid='{4176F0CB-55F3-4751-B127-09EADFE95258}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{9C403377-5C24-4D16-8FF4-C2103E44B447}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0upmw0m17so3e3107ri0p0mbg9e4].[none:customer_state:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0upmw0m17so3e3107ri0p0mbg9e4].[none:customer_state:nk]</field>
+            <field>[federated.0upmw0m17so3e3107ri0p0mbg9e4].[none:seller_state:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A10D75DE-66F0-4429-B263-8A43C5EB6822}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B9C5F6BA-F9D3-4E68-832A-294BE4DD30BC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAANsElEQVR4nO3dTXAb933G8Wd38UoQJAHw/V18FUWRlKgX23qx5VRWnWnG7cSdsdPOZJLp
+      rZNDckkOPffSQ6fTSzvTuM304Itru2kyjR07siXFkixNKOuFb4IoSnx/AQUQAAEsFrubgyzK
+      Gk+CBaQFEf6fz40aLvaPEb/YBbD4QTJN0wSRgCRJkuSdXgTRTmIAJDQGQEJjACQ0BkBCc+z0
+      AughLbmGDz/+LQy3HydPfQMBrwIASKyFMTabhT+6gIZT30CLx/m1bY1sEufOfoLNDHDopZch
+      x2Oob2uF8ysPb9GlOcihFlS7lVLdpT8JDKBMLF4/i3j1CL45Ug8vUvj0g99i0/DguaEarD9Q
+      oa+twq+puPjZh4hkK/DyiSFMT8xiJWHgZJeEqZgL3/nzI9CyS/i3f3kLw3/1BkYCKq5OzaFr
+      5CjC7/8n1lsP4tuvHMfE1YtATTdOHx+CLEk7fdd3FE+BykT74W/Cv3IJ//X2e5i8dgnzaRe8
+      mxO4Pp/Z/p30+jiu3dXhSSzi5u0pvPeLKzh2/BCqOkYwXJPAf/z0Z4jofvTt3Y+TR4dR4ffD
+      oSVw7uoUurq7cOzlM4iMf4pkRRtmb1xGXDN28B6XBwZQJtaXl9G+/3l0hYCYpmBzYwWe1v1o
+      8z/+L5LdlcgmVuGpb0dbrR97+ocR9DqRjEbgaejDyX0NCC8l4ZDTWFiO4Fe//gT9g/vg97pQ
+      6Xdi4d59yC4fIiuL6BscgUsR+9EfACS+E1weMpvruDUVhrO6GYO9rbg/PY5oRkJPTweyGuDM
+      puCuq8P63QmsJUz09XUiuWWgpTGAXDqOiYlJZORKDA/vQ3J5BnObEpp9GpZiWQQbW9FaJWHs
+      Zhh9g/uxGJ5A1lmNoX09cMjiRiBJksQASFhlcSmEaZowDJ6L0s5gACS0HQ+AaCcxABIaAyCh
+      MQASGgMgoTEAEhoDIKExABIaAyChMQASGgMgodkagGmaUDMppDIqTBPQ1DSSqQx4+SmVC1s/
+      EplLrOH2UgJyLoPG5kbcn52DywGE2vehKeCxc9dEltj6eQDTMGAaGibHxxGocCNe1YFObxYz
+      K5sY6OmAYRjbV4PKsgzt2hcwc1pB+3B0dECur7fpHtBu5nK5JFuOAFo6gdl7y2jpbsXtseto
+      GRhBVWoRcUiAacI0DUiSBFmW8ag/RVGw+tZbMDbjBe2r5vvfQ+UrTXbcDRKALQE4vX70DfgR
+      v3sVd2NZJG/cwN6hXkRv3UTKAzT3jkKSJEiSBMN4HANQ+MfzJAlfbktUOFufA1R1HcHrXY9/
+      rj0WgG4CDoV/sFQeSjoXSJJlDiKissKHYhIaAyChMQASGgMgoTEAEhoDIKExABIaAyChMQAS
+      GgMgoTEAEhoDIKExABIaAyChMQASGgMgoTEAEhoDIKExABIaAyChMQASGgMgoTEAEhoDIKHZ
+      OqfKNDSEJ8fhrd2DtloXpiZnoEkyWju6Eah027lrIkvsHdSmZVERCEFNp5FLPEDCUYveQArL
+      q5uo8dU98atFD6k2n2JbEp6906F7uhH0e7GykYPkrIIem8F0DGjproVpmtB1fXs8umEYQBF/
+      yLquQ9MKG6lO9Iit06ENLY2FyAaiMQPVsgxHVQgNHgPxZAKtdVWQZXn7j9/hcDwc9VwgxaHA
+      5XLZcC9IBDbPqpXg8dWgxSuhIliDPdENZHQJPQ0N9u6WyCJbA5CdHtTXP/4qJG8Dv8iCygtf
+      BiWhMQASGgMgoTEAEhoDIKExABIaAyChMQASWll9a+l///VrSGbVgrZ5ra8Hz9u0Htr9yioA
+      XZGhK0pB2xhy4dcPET3CUyASGgMgoTEAEhoDIKExABIaAyChMQASGgMgoTEAEhoDIKExABIa
+      AyChMQASGgMgodkagGmaUNMJxLdUACYym+u4dv0mtrK6nbslsszeI4Aax7XrN7G8FoWZjeHa
+      7XUM7R+Au7BL/olsY8sHYnRNRTSaQFUoiOHBPqxs5KBurCKajuPG2Beo7+pHc8D3tenQxQw5
+      13M6stnsM78PJAZ7PhEmAbIsPzHs2eH1oLGxC/ubXQgvR9Aa8n9tOnQxn+3idGh6GrYEoDjc
+      CNa6kUtFMTO7ADUroSbUi4Axg6m7QNOeXjt2S1QwWz8T7KgIYGg4sP1zcO+QnbsjKhhfBiWh
+      MQASGgMgoTEAEhoDIKExABIaAyChMQASGgMgoTEAEhoDIKExABIaAyChMQASGgMgoTEAEhoD
+      IKExABIaAyChMQASGgMgoTEAEhoDIKExABKa7QEYeg65nAHgy2nRmQyMYoaAEtnA3vHo2hZ+
+      d/Uy7i5uAAD09ANc+Og32OAsWyoTto5GhOxC/0A/IlEdgI7p6Tm0Ngehm3g8EfrL6dCmWdxh
+      wdANaJr2bNdNwrAlAC2dwOy9ZbT0dMMhP5z5HLs/jqn5NTi2VtBQtQcNPQ1QFAWG8fD0SFGK
+      +9IAWZaL3pbIlgCcXj/6BvzIpaK4FZ7BZhKoGR3B668NY3FiDK72xu3R6ZIkQZIkyHKRZ2Nf
+      jmInKobt06EPjD73xL+17Bu1c5dEBeFDJwmNAZDQGAAJjQGQ0BgACY0BkNAYAAmNAZDQGAAJ
+      jQGQ0BgACY0BkNAYAAmNAZDQGAAJjQGQ0BgACY0BkNAYAAmNAZDQGAAJjQGQ0BgACa2gACYn
+      JzE1PWXXWohKrqAA5hfmsbiwaNdaiErO0mS4hYUFXLl6BZWVlQXduGlouD0xjoq6PWgLOjAV
+      vg/NMNHc3o1QlaeoBRM9S380ANM0cf78ebS2tiISiRQcALQsfKEQ1HQaphxCZ08vtPgqFiNR
+      BP2NX9tXUcyn2JaEl/cIcPnzy3iz8034/X54vV7IUv6zpq9Ohw5WerGi5iApDiQXw5iNGjgw
+      tBemaUDXdZim+XhEehF3QNd1jkenov3RACRJwk9+/BMAQEdHh+UbfTQd2simMR+J4EHUQL0/
+      i8+nVzHY247kVhoBvxeyLG9/T4DD4YBUxB1QHApcLlcRWxLZ/QUZkoQKXxBtFYDk8WJkQIJp
+      PhyHTlQOLAUQWbyLDBy4+PGv0XnsL3G0t87SjctOD+rqHz/Z9fn8xa2SyCaWAliem8aduQeo
+      P3QM98au4WjvGbvXVTRDN6Am0wVv5670Qlb4vqBoLAXQ1T+C9cwsDrZUYanikN1reiqpWBK/
+      +ef/LXi7Uz/4FqqbgjasiMqZpYe8regKVtdWMTGbRHcH/0ho97AUQF3XAbx4oA0fvfNT/Ou/
+      v4Urk3w3mHYHS6dAixMX8el0Cj/4h39EtUvHzMK63esiKglLRwB/qBFKfBH///7buHg7hr4u
+      6+8JEJUzSwHcC0/C4w1h8PgoovNLdq+JqGQsBdDSNYgDh3px4+wl+BtCdq+JqGTyPgfQ1QQu
+      nTuLO6sJOPxNODjI0x/aPfIeAZanLkJtPoEf/uhH+NsTIfz8LD8QQ7tH3iNAOhlHePxzvBu5
+      BTOzgrSrqhTrIiqJvAF0jr6K73bGt3/2VfM5AO0eeQNwev2or3UgayqocDt5JSftKpbeCIuv
+      3sWH58egeAMYGT2I7vZmOBWGQH/6LL0M6vEH0BD0Y31pFuNfXMHHl2/avS6ikrB0BFBTaTT1
+      H8HJM6/BKRtIpFS710VUEpYCSMWW8Yt3PoUv5EDz6Bv49vE9dq+LqCQsBRBNbOHQkcOQG6uw
+      MTsHgAHQ7mDpOUDP/udw5NhhKNEEDh4/YPeaiEomzxHAxPTnH+Oz8fntf3E1JdDTVG3zsohK
+      I+8pUNeBE5Adl/D+/32A/lOvYu5eBC8MttqymOWNd7GZiRW0zVb678BTMipWngAkON1epNNb
+      GDl8GFu6AVMr/APnVpmmCtPMFriNbtNqSASWngPsPXgcHqcHSBs4/cphu9dEVDJ5AzByKn73
+      2TncnluFajrh9zpLsS6iksgbwFr4Eu6oTXjzb76DI3UP8PMLM5Zv3DRNqKkE4lsZwDQRW7mH
+      iZlFGBxmS2UibwCJBxGkMwlMTkxgI2MgulzAB+LVOK7dvIXltRiM1BrCEaDRk8SdhcKe6BLZ
+      Je+rQM17X8CwMg/DMABvG868tDfvjeqaigfROKpDIQzv68XKRg7qZgI1jc3wubNYWlqHYVRv
+      T4d+NCC32OnQ2ezjJ87FTorWNO2J2yEx5A3AF2rB0ZoGaLmHr7YoioU3jyUJiqLgq1dOOzwK
+      tmJpaDUZyIoPsiw/m+nQypPTobPO4p6jOJ1OTpkWkKVLIe6MfYRfXVlAhbqMFTOAF178C5w+
+      0vUHf19xuBAMBZFLRTEzuwBVk1AT6kXFVhgzSRk9A4PP7A4QPQ1LAWRVHQOHT6BXn8SFZBvS
+      0fsA/nAA2zdeEcDQcGD75+DQSNELJbKDpQD6R09g48J53MhV41sv9kNN880n2h2sXQ26NIvF
+      TQ2tnXXwun0I+hW710VUEpYCqOsewau+Krz39s9waz6Fv3/9ebvXteO02x9CPfdPBW0jOb3w
+      fe+XNq2I7GApgJXpK/hgbAGn3vwhOuoFuRJUS8NMrha0iemssGkxZJe8b4SZpgF3oBXDHQF8
+      8st3cHmCs0Fp98h7BJi+8D94dyyOMyN1SIeGcHKkvRTrIiqJvEeAztE/w+mD7ZgOz+D+jcuY
+      mNsoxbqISiLvEcBTGcJzL72Coy+exhvZNDaTRinWRVQSFr8n+OF3+zrdPtS67V0QUSn9HmkA
+      jEQO3O2qAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAACF0lEQVR4nO3TMQEAIAzAMIZ/z0MGRxMFfTq7uweCZmbu7wj4yQCkGYA0A5BmANIMQJoB
+      SDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0
+      A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMA
+      aQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5Bm
+      ANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYg
+      zQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIM
+      QJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCk
+      GYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoB
+      SDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0
+      A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSDMAaQYgzQCkGYA0A5BmANIMQJoBSHtb
+      egWA0FAUAAAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
